@@ -27,9 +27,11 @@ export const OverlayPortal: React.FC<{ children: any }> = ({ children }) => {
           position: 'relative',
           width: '100%',
           height: '100%',
-          pointerEvents: 'none'
+          pointerEvents: 'none',
+          backgroundColor:'white'
+        
         }}>
-        {children}
+   asd
       </div>
       , root)
   }
