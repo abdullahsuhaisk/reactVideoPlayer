@@ -4,15 +4,15 @@ import ResizeSensor from 'css-element-queries/src/ResizeSensor';
 import { throttle } from 'lodash';
 
 const aspectRatio = 1.777;
-const modalRoot = document.getElementsByClassName('player-overlay')[0] as HTMLDivElement;
+const modalRoot = document.getElementsByClassName('player')[0] as HTMLDivElement;
 console.log(modalRoot);
 
 export const OverlayPortal: React.FC<{ children: any }> = ({ children }) => {
   const [root, setRoot] = useState();
 
   useEffect(() => {
-    setRoot(document && document.getElementsByClassName('player-overlay')[0] as HTMLDivElement)
-
+    setRoot(document && document.getElementsByClassName('player')[0] as HTMLDivElement)
+    console.log(document);
   }, [])
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,11 +27,12 @@ export const OverlayPortal: React.FC<{ children: any }> = ({ children }) => {
           position: 'absolute',
           top: 0,
           left: 0,
-          pointerEvents: 'none',
-          backgroundColor: 'white'
+          pointerEvents: 'auto',
 
+          width: '100%',
+          height: '90%'
         }}>
-        asd
+        {children}
       </div>
       , root)
   }
