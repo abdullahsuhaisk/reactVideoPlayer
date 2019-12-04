@@ -24,14 +24,14 @@ export const OverlayPortal: React.FC<{ children: any }> = ({ children }) => {
         ref={containerRef}
         className="overlay-container"
         style={{
-          position: 'relative',
-          width: '100%',
-          height: '100%',
+          position: 'absolute',
+          top: 0,
+          left: 0,
           pointerEvents: 'none',
-          backgroundColor:'white'
-        
+          backgroundColor: 'white'
+
         }}>
-   asd
+        asd
       </div>
       , root)
   }
