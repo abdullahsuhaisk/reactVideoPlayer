@@ -1,33 +1,30 @@
 import React from 'react';
-import { Player } from './Player';
-import { OverlayPortal } from './components/OverlayPortal';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+
+import PlayerContainer from './features/Player/PlayerContainer';
+import Authentication from './features/Authentication';
 
 
 const App: React.FC = () => {
   return (
-    <div className="App" style={{ width: '100%', height: '100vh', overflow: 'hidden', backgroundColor: '#f3f3f3', position: 'relative' }}>
-      <Player />
-      <OverlayPortal>
-        <div style={{ color: 'red' }}>
-          aaaaaaaaaaaaaaaaaaaaaaa
-        </div>
-      </OverlayPortal>
+    <div className="App" style={{ width: '100%', height: '100vh' }}>
+      <Router>
+        <Route path="/video">
+          <PlayerContainer />
+        </Route>
+        <Route path="/auth">
+          <Authentication />
+        </Route>
+      </Router>
     </div>
   );
 }
 
 export default App;
-
-/*
-      <div className="Overlay-Container" style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        pointerEvents: 'none',
-        backgroundColor: 'rgba(0,0,0,0.7)'
-      }}>
-        Abc
-      </div>
-*/
