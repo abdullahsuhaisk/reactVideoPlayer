@@ -77,7 +77,7 @@ const OverlayPortal = ({
     return ReactDOM.createPortal(
       <div
         ref={containerRef}
-        className="overlay-container"
+        className="overlay-portal"
         style={{
           position: "absolute",
           top: 0,
