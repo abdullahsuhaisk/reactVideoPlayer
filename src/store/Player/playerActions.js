@@ -12,6 +12,7 @@ const VALUME = "VALUME_STATE_CHANGED";
 const MUTED = "MUTED_STATE_CHANGED";
 const DURATION = "DURATION";
 const PROGRESS = "PROGRESS";
+const PLAYER_STATUS = "PLAYER_STATUS_CHANGED";
 
 const onUrl = buildActionCreator(URL);
 const onPlaying = buildActionCreator(PLAYING);
@@ -19,6 +20,7 @@ const onValume = buildActionCreator(VALUME);
 const onMuted = buildActionCreator(MUTED);
 const onDuration = buildActionCreator(DURATION);
 const onProgress = buildActionCreator(PROGRESS);
+const onPlayerStatusChange = buildActionCreator(PLAYER_STATUS);
 
 export const actionTypes = {
   URL,
@@ -27,6 +29,7 @@ export const actionTypes = {
   MUTED,
   DURATION,
   PROGRESS,
+  PLAYER_STATUS,
   ...baseActionTypes
 };
 
@@ -37,6 +40,7 @@ export const actions = {
   onMuted,
   onDuration,
   onProgress,
+  onPlayerStatusChange,
   ...baseActions
 };
 

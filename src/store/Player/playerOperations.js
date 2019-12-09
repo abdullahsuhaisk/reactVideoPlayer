@@ -35,3 +35,9 @@ export const onProgress = obje => {
     dispatch(actions.onProgress(obje));
   };
 };
+
+export const onPlayerStatusChange = value => {
+  return dispatch => {
+    dispatch(actions.onPlayerStatusChange(value));
+  };
+};

@@ -30,7 +30,8 @@ class Player extends React.Component {
       muted,
       onPlaying,
       onDuration,
-      onProgress
+      onProgress,
+      onPlayerStatusChange
     } = this.props;
     this.handleClickFullscreen = () => {
       screenfull.request(findDOMNode(this.player));
@@ -64,7 +65,7 @@ class Player extends React.Component {
       this.player.seekTo(parseFloat(e.target.value));
     };
     this.handleProgress = state => {
-      console.log("onProgress", state);
+      // console.log("onProgress", state);
       onProgress(state);
       // We only want to update time slider if we are not currently seeking
       if (!this.state.seeking) {
@@ -115,18 +116,25 @@ class Player extends React.Component {
           playbackRate={playbackRate}
           volume={volume}
           muted={muted}
-          onReady={() => console.log("onReady")}
-          onStart={() => console.log("onStart")}
-          onPlay={() => onPlaying(!playing)}
+          onReady={() => onPlayerStatusChange("READY")}
+          onStart={() => onPlayerStatusChange("READY_TO_START")}
+          onPlay={() => {
+            onPlaying(!playing);
+            onPlayerStatusChange("PLAYED");
+          }}
           onEnablePIP={this.handleEnablePIP}
           onDisablePIP={this.handleDisablePIP}
           onPause={() => onPlaying(false)}
           onBuffer={() => console.log("onBuffer")}
           onSeek={e => console.log("onSeek", e)}
           onEnded={this.handleEnded}
-          onError={e => console.log("onError", e)}
+          onError={e => {
+            onPlayerStatusChange("ERROR");
+            console.log("onError", e);
+          }}
           onProgress={this.handleProgress}
           onDuration={this.handleDuration}
+          progressInterval={1000}
         />
       </div>
     );
@@ -141,9 +149,15 @@ export default InjectPlayerProps({
     volume,
     muted
   }),
-  selectActions: ({ onPlaying, onDuration, onProgress }) => ({
+  selectActions: ({
+    onPlaying,
+    onDuration,
+    onProgress,
+    onPlayerStatusChange
+  }) => ({
     onPlaying,
     onProgress,
-    onDuration
+    onDuration,
+    onPlayerStatusChange
   })
 })(Player);

@@ -38,6 +38,8 @@ const playerReducer = (state = initialState, action) => {
         loaded: action.payload.loaded,
         loadedSeconds: action.payload.loadedSeconds
       };
+    case actionTypes.PLAYER_STATUS:
+        return { ...state, playerStatus: action.payload };
     default: {
       return state;
     }

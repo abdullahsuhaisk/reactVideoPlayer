@@ -5,7 +5,8 @@ import {
   onValume,
   onUrl,
   onMuted,
-  onProgress
+  onProgress,
+  onPlayerStatusChange
 } from "./playerOperations";
 
 function mapStateToProps(state) {
@@ -16,7 +17,7 @@ function mapStateToProps(state) {
     muted: state.player.muted,
     duration: state.player.duration,
     played: state.player.played,
-    playedSeconds:state.player.playedSeconds
+    playedSeconds: state.player.playedSeconds
   };
 }
 
@@ -27,7 +28,8 @@ function mapDispatchToProps(dispatch) {
     onValume: value => dispatch(onValume(value)),
     onUrl: url => dispatch(onUrl(url)),
     onMuted: () => dispatch(onMuted()),
-    onProgress: obje => dispatch(onProgress(obje))
+    onProgress: obje => dispatch(onProgress(obje)),
+    onPlayerStatusChange: value => dispatch(onPlayerStatusChange(value))
   };
 }
 export const InjectPlayerProps = InjectProps(
