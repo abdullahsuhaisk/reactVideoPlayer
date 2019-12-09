@@ -14,7 +14,9 @@ function mapStateToProps(state) {
     playing: state.player.playing,
     volume: state.player.volume,
     muted: state.player.muted,
-    duration: state.player.duration
+    duration: state.player.duration,
+    played: state.player.played,
+    playedSeconds:state.player.playedSeconds
   };
 }
 

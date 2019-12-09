@@ -1,5 +1,10 @@
 import React from "react";
+import Box from "../../../components/Box";
 
 export const PlayingOverlayContainer = () => {
-  return <div>Playing Overlay</div>;
+  return (
+    <div style={{ color: "yellow",display:'inline' }}>
+      <Box />
+    </div>
+  );
 };

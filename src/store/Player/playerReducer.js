@@ -9,6 +9,7 @@ const initialState = {
   volume: 0.8,
   muted: true,
   played: 0,
+  playedSeconds:0,
   loaded: 0,
   duration: 0,
   playbackRate: 1.0,

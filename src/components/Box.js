@@ -17,8 +17,8 @@ export default class Box extends Component {
       ref={this.ref}
         className="box"
         style={{
-          width: "300px",
-          height: "300px",
+          width: "100px",
+          height: "150px",
           backgroundColor: "yellow"
         }}
       ></div>

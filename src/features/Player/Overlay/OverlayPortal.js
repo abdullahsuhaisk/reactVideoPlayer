@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import ResizeSensor from "css-element-queries/src/ResizeSensor";
 import { throttle } from "lodash";
 import { compose } from "redux";
-import { InjectLayoutProps } from "../store/layout/layoutProps";
+import { InjectLayoutProps } from "../../../store/layout/layoutProps";
 
 const aspectRatio = 1.777;
 const modalRoot = document.getElementsByClassName("player")[0];

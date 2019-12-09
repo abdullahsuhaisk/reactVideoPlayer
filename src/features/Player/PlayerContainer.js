@@ -1,7 +1,7 @@
 import React from "react";
 import Player from ".";
-import OverlayPortal from "../../components/OverlayPortal";
-import OverlayContainer from "../../components/OverlayContainer";
+import OverlayPortal from "./Overlay/OverlayPortal";
+import OverlayContainer from "./Overlay/OverlayContainer";
 
 const PlayerContainer = () => {
   // OverlayPortal make a new div inside Player
