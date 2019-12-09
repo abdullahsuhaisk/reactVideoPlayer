@@ -13,12 +13,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const ProductList = () => {
+const ProductList = ({ playedSeconds }) => {
   return (
     <Wrapper>
       <div className="cards">
-        <ProductCard />
-        <ProductCard />
+        {playedSeconds > 5 && playedSeconds < 10 ? (
+          <ProductCard title="2" />
+        ) : null}
+        {playedSeconds > 1 && playedSeconds < 6 ? (
+          <ProductCard title="1" />
+        ) : null}
       </div>
     </Wrapper>
   );

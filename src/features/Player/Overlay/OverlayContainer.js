@@ -21,7 +21,7 @@ const OverlayContainer = ({ playing, playedSeconds }) => {
       ) : (
         <PausedOverlayContainer />
       )}
-      <HotSpotOverlay />
+      <HotSpotOverlay playedSeconds={playedSeconds} />
     </div>
   );
 };

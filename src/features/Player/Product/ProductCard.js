@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductCardStyle } from "./ProductCard.style";
 
-export const ProductCard = () => {
-  return <ProductCardStyle></ProductCardStyle>;
+export const ProductCard = ({ title }) => {
+  return <ProductCardStyle>{title}</ProductCardStyle>;
 };

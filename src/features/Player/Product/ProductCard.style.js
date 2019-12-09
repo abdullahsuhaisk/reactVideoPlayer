@@ -6,4 +6,5 @@ export const ProductCardStyle = styled.div`
   background: white;
   margin: 1rem;
   border: 5px;
+
 `;
