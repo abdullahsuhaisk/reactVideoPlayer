@@ -3,7 +3,7 @@ import Box from "../../../components/Box";
 
 export const PlayingOverlayContainer = () => {
   return (
-    <div style={{ color: "yellow",display:'inline' }}>
+    <div style={{ color: "yellow", position: "relative" }}>
       <Box />
     </div>
   );

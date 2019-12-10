@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import PlayerContainer from './features/Player/PlayerContainer';
-import Authentication from './features/Authentication';
+import Authentication from './features/Authentication/Authentication';
 
 
 const App: React.FC = () => {

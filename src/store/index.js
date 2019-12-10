@@ -3,6 +3,7 @@ import reduxThunk from "redux-thunk";
 import baseReducers from "./base/baseReducers";
 import layoutReducer from "./layout/layoutReducer";
 import playerReducer from "./Player/playerReducer";
+import authReducer from "./Auth/authReducer";
 
 // TODO: AXIOS CONFIGURE
 // App reducers
@@ -13,7 +14,8 @@ const store = createStore(
   combineReducers({
     base: baseReducers,
     layout: layoutReducer,
-    player: playerReducer
+    player: playerReducer,
+    auth: authReducer
   }),
   composeEnhancers(applyMiddleware(reduxThunk))
 );
