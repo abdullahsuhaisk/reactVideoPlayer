@@ -33,6 +33,7 @@ class Player extends React.Component {
       onProgress,
       onPlayerStatusChange
     } = this.props;
+    console.log(duration);
     this.handleClickFullscreen = () => {
       screenfull.request(findDOMNode(this.player));
     };
