@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { Input, ReactPlayer, StepController } from "../../components";
+import {
+  Input,
+  ReactPlayer,
+  StepController,
+  MyReactPlayer
+} from "../../components";
 
 export default function AddVideo(props) {
   useEffect(() => {
@@ -24,7 +29,7 @@ export default function AddVideo(props) {
           className="video"
           style={{ display: "flex", justifyContent: "center" }}
         >
-          <ReactPlayer url={props.state.url} />
+          <MyReactPlayer url={props.state.url} />
         </div>
         <StepController stepOptions={props} />
       </div>

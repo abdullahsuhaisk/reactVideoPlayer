@@ -1,12 +1,16 @@
 import React from "react";
-import { StepController, BasicVideoPlayer } from "../../components";
+import {
+  StepController,
+  ResponsivePlayer,
+  MyReactPlayer
+} from "../../components";
 
 export default function PreviewVideo(props) {
   return (
     <>
       <div>
-        <div style={{ width: 640, height: 640 }}>
-          <BasicVideoPlayer />
+        <div>
+          <MyReactPlayer />
         </div>
         <h2> Video Player Basic Settings</h2>
         <ul>
@@ -17,7 +21,6 @@ export default function PreviewVideo(props) {
           <li>Can go direct from origin url</li>
         </ul>
         <StepController stepOptions={props} />
-
       </div>
     </>
   );
